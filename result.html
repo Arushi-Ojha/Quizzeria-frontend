@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Results - QUIZZERIA</title>
+  <link href="resources/favicoon-removebg-preview.png" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #3B6790;
+      --secondary: #23486A;
+      --accent: #EFB036;
+      --text-light: #4C7B8B;
+      --text-muted: #7A9BBF;
+      --bg-light: #F5F7FA;
+      --card-bg: #D9E2EC;
+      --border-color: #B0C4D9;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      user-select: none;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .custom-heading {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      text-shadow: 1.5px 1.5px 4px rgba(75, 123, 139, 0.8);
+      -webkit-user-select: none;
+      user-select: none;
+      text-align: center;
+    }
+
+    #form {
+      width: 7rem;
+      height: 7rem;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+      border-radius: 0.75rem;
+      filter: drop-shadow(0 2px 3px rgba(59, 103, 144, 0.4));
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    #result-box {
+      background: var(--card-bg);
+      max-width: 28rem;
+      width: 100%;
+      border-radius: 2rem;
+      box-shadow: 0 14px 36px rgba(35, 72, 106, 0.3);
+      padding: 2.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: var(--primary);
+      font-family: "Poppins", sans-serif;
+      -webkit-user-select: none;
+      user-select: text;
+    }
+
+    #result-box .stat {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background: var(--accent);
+      color: var(--bg-light);
+      font-family: "Pacifico", cursive;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 1rem 0;
+      border: none;
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 22px rgba(239, 176, 54, 0.7);
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.53);
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    button:hover,
+    button:focus {
+      background: var(--secondary);
+      box-shadow: 0 14px 28px rgba(35, 72, 106, 0.85);
+      outline: none;
+      color: var(--bg-light);
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <img
+    id="form"
+    loading="lazy"
+    alt="QUIZZERIA logo in pink and teal minimalist doodle style"
+    src="resources/logos (2).jpeg"
+  />
+  <h2 class="custom-heading">
+    🎉 Quiz Result
+  </h2>
+  <div id="result-box">
+    <div id="username" class="stat"></div>
+    <div id="quiz-id" class="stat"></div>
+    <div id="score" class="stat"></div>
+    <div id="total-questions" class="stat"></div>
+    <div id="submitted-at" class="stat"></div>
+    <button onclick="goToDashboard()" type="button">
+      JOIN ANOTHER QUIZ
+    </button>
+  </div>
+</body>
+
+</html>

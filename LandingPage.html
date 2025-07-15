@@ -1,0 +1,254 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>QUIZZERIA</title>
+  <link rel="icon" href="resources/favicoon-removebg-preview.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script>localStorage.clear();</script>
+  <style>
+    :root {
+      --primary: #3B6790;
+      --secondary: #23486A;
+      --accent: #EFB036;
+      --text-light: #4C7B8B;
+      --text-muted: #7A9BBF;
+      --bg-light: #F5F7FA;
+      --card-bg: #D9E2EC;
+      --border-color: #B0C4D9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      background: var(--bg-light);
+      color: var(--primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 3rem;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 4px 30px rgba(35, 72, 106, 0.05);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--accent);
+      color: var(--secondary);
+    }
+
+    .hero {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--bg-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(35, 72, 106, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary);
+      color: var(--bg-light);
+      box-shadow: 0 0 30px rgba(59, 103, 144, 0.5);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 12px rgba(35, 72, 106, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(35, 72, 106, 0.15);
+    }
+
+    .feature-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--primary);
+    }
+
+    .feature-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .latest-quizzes-container {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quiz-subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: unset;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.95rem;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .features {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>QUIZZERIA</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Where Curiosity Wins</h2>
+      <p>
+        Test your wits, boost your brainpower, and rise through the leaderboard. Join the smartest minds on QUIZZERIA.
+      </p>
+      <button class="btn-primary" onclick="location.href='login.html'">
+        Get Started
+      </button>
+    </section>
+
+    <section class="features" id="features">
+      <div class="feature-card">
+        <h3 class="feature-title">Real-Time Quizzes</h3>
+        <p class="feature-desc">Engage in live quizzes with friends and track scores instantly.</p>
+      </div>
+      <div class="feature-card">
+        <h3 class="feature-title">Smart Leaderboards</h3>
+        <p class="feature-desc">Climb the rankings and prove your knowledge globally.</p>
+      </div>
+      <div class="feature-card">
+        <h3 class="feature-title">AI-Powered Questions</h3>
+        <p class="feature-desc">Every quiz is unique, tailored to challenge and educate.</p>
+      </div>
+    </section>
+  </main>
+
+
+  <div>
+    <h4 class="quiz-subtitle">Recently Published</h4>
+    <div id="latest-quizzes-container"></div>
+  </div>
+  <footer>
+    © 2024 QUIZZERIA. Made with 💡 by the QUIZZERIA Team.
+  </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

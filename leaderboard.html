@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Leaderboard - QUIZZERIA</title>
+  <link href="resources/favicoon-removebg-preview.png" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #3B6790;
+      --secondary: #23486A;
+      --accent: #EFB036;
+      --text-light: #4C7B8B;
+      --text-muted: #7A9BBF;
+      --bg-light: #F5F7FA;
+      --card-bg: #D9E2EC;
+      --border-color: #B0C4D9;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      user-select: none;
+      min-height: 100vh;
+      padding: 2rem 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      text-shadow: 1.5px 1.5px 4px rgba(59, 103, 144, 0.8);
+      -webkit-user-select: none;
+      user-select: none;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 700px;
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      box-shadow: 0 14px 36px rgba(35, 72, 106, 0.3);
+      overflow: hidden;
+      -webkit-user-select: none;
+      user-select: text;
+    }
+    thead {
+      background: var(--secondary);
+      color: var(--bg-light);
+      font-weight: 700;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    thead tr th {
+      padding: 1rem 1.5rem;
+      border-right: 1px solid rgba(35, 72, 106, 0.4);
+    }
+    thead tr th:last-child {
+      border-right: none;
+    }
+    tbody tr {
+      border-bottom: 1.5px solid rgba(59, 103, 144, 0.4);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      color: var(--primary);
+    }
+    tbody tr:hover {
+      background-color: var(--secondary);
+      color: var(--bg-light);
+    }
+    tbody tr td {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary);
+      border-right: 1px solid rgba(59, 103, 144, 0.4);
+    }
+    tbody tr td:last-child {
+      border-right: none;
+    }
+    @media (max-width: 640px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tbody tr {
+        margin-bottom: 1.5rem;
+        background: var(--card-bg);
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 22px rgba(35, 72, 106, 0.3);
+        padding: 1rem 1.5rem;
+        color: var(--primary);
+      }
+      tbody tr:hover {
+        background-color: var(--card-bg);
+        color: var(--primary);
+      }
+      tbody tr td {
+        border: none;
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 50%;
+        font-weight: 600;
+        color: var(--primary);
+      }
+      tbody tr td::before {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        font-weight: 700;
+        color: var(--accent);
+        font-family: "Poppins", sans-serif;
+      }
+      tbody tr td:nth-of-type(1)::before { content: "Rank"; }
+      tbody tr td:nth-of-type(2)::before { content: "Username"; }
+      tbody tr td:nth-of-type(3)::before { content: "Score"; }
+      tbody tr td:nth-of-type(4)::before { content: "Total Questions"; }
+      tbody tr td:nth-of-type(5)::before { content: "Submitted At"; }
+    }
+  </style>
+</head>
+<body>
+  <h2>Quiz Leaderboard</h2>
+  <table role="table" aria-label="Quiz Leaderboard">
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Username</th>
+        <th scope="col">Score</th>
+        <th scope="col">Total Questions</th>
+        <th scope="col">Submitted At</th>
+      </tr>
+    </thead>
+    <tbody id="leaderboard-body" role="rowgroup" aria-live="polite" aria-relevant="additions removals">
+      
+    </tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html>
